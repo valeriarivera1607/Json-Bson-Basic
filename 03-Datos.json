@@ -1,0 +1,43 @@
+{
+    "ejemplos_json" :{
+        "descripcion": "Ejemplo de un documento JSON con varios tipos de datos y estructuras anidadas",
+        "datos": {
+            "nombre": "Valeria Rivera",
+            "edad": 16,
+            "activo": true,
+            "hobbies": ["voleibol","roblox","viajar"],
+            "direccion": {
+                "calle": "calle falsa 308",
+                "ciudad": "Monterrey",
+                "pais":"Mexico"
+            },
+            "contacto": null
+                },
+  "nota":"este ejemplo muestra como json puede representar diferentes tipos de datos y estructuas complejas"
+    },
+    
+    "ejemplo_documento_mongoBD":{
+        "descripcion": "ejemplo de un documentoo tipico en mongoDB, que utiliza BSON internamente",
+        "datos": {
+            "_id": "507f1f77bcf86cd799439011",
+            "producto": "Smarphone Samsung Galaxy S21",
+            "precio":799.99,
+            "disponible":true,
+            "categorias": ["electronica", "moviles", "smartphones"],
+            "especificacion": {
+                "procesador": "exynos 2100",
+                "ram": "8GB",
+                "almacenamiento": "128GB",
+                "pantalla": "6.2 pulgadas",
+                "bateria": "4000mAh"
+                       },
+                "fecha_creacion":"2026-01-29T10:00:00Z",
+                "reviews": [
+                    {
+                        "usuario": "techlover",
+                        "comentario": "exelente rendimiento y camara"
+                    }
+                ]
+    }
+  }
+}
