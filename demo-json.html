@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valivali</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Demostracion de JSON - ¿Para que sirve?</h1>
+
+    <div class="contaner">
+       <!--panel de JSon crudo-->
+        <div class="panel">
+            <h2>JSON (texto) </h2>
+            <p>asi se ve un texto plano</p>
+            <pre id="jsonRaw"></pre>
+        </div>
+
+        <!--panel de datos extraidos-->
+        <div class="panel">
+            <h2>Datos utilizables</h2>
+            <p>Asi usamos los datos del JSON en nuestra app</p>
+            <div id="datosExtraidos"></div>
+        </div>
+    </div>
+
+    <script>
+        const miJSON = {
+            "ejemplo_json" : {
+                "descripcion": "ejemplo de documento JSON con varios tipos de datos",
+                "datos": {
+                    "nombre": "Valeria Rivera Lara",
+                    "edad": 16,
+                    "activo":true,
+                    "hobbies":["Volleibol", "Roblox", "Viajes"],
+                    "direccion":{
+                        "calle": "Miguel F Martinez",
+                        "ciudad": "Escomiedo",
+                        "pais": "mexico"
+                    },
+                    "contacto": null
+                },
+                "nota": "este ejemplo muestra como JSOn se puede representar con diferentes tipos de datos"
+         }
+        };
+
+
+        // Mostrar JSON como texto (ASI SE TRASMITE EN INTERN3ET)
+        document.getElementById('jsonRaw').textContent = JSON.stringify(miJSON, null,2);
+
+        // Extraer y usar los datos del JSON
+        const datos = miJSON.ejemplo_json.datos;
+        const datosDiv =document.getElementById ('datosExtraidos');
+        //crear HTML con los datos ectraidos
+        datosDiv.innerHTML = `
+        <div class="datos-item">
+            <span class=label>Nombre:</span>
+            <span class=value>${datos.nombre}</span>
+        </div>
+
+        <div class="datos-item">
+            <span class=label>Edad:</span>
+            <span class=value>${datos.edad}</span>
+        </div>
+
+         <div class="datos-item">
+            <span class=label>Estado:</span>
+            <span class=value>${datos.activo}</span>
+        </div>
+
+         <div class="datos-item">
+            <span class=label>Hobbies:</span>
+            <span class=value>${datos.hobbies.join(', ')}</span>
+        </div>
+
+         <div class="datos-item">
+            <span class=label>Direccion:</span>
+            <span class=value>${datos.direccion.calle}, ${datos.direccion.ciudad}, ${datos.direccion.pais}</span>
+        </div>
+
+         <div class="datos-item">
+            <span class=label>Contacto:</span>
+            <span class=value>${datos.contacto || 'no disponible'}</span>
+        </div>
+
+        `
+
+
+    </script>
+</body>
+</html>
